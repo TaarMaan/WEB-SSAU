@@ -2,7 +2,7 @@ const calculator = (function () {
     let displayValue = "";
     let currentValue = null;
     let currentOperator = null;
-    let history = [];
+    let history = "";
 
     const operations = {
         "+": (a, b) => a + b,
@@ -50,10 +50,9 @@ const calculator = (function () {
         if (currentOperator in operations) {
             const result = operations[currentOperator](currentValue, value);
 
-            if (result !== null) {
-                const operationText =
-                    currentValue + " " + currentOperator + " " + value + " = " + result;
-                history += operationText + "<br>";
+            if (result !== null && !Number.isNaN(result)) {
+                const operationText = `${currentValue} ${currentOperator} ${value} = ${result}`;
+                history += `${operationText}<br>`;
                 document.getElementById("history").innerHTML = history;
                 currentValue = result;
                 displayValue = currentValue.toString();
