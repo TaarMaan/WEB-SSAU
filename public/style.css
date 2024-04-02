@@ -1,0 +1,81 @@
+body {
+    font-family: 'Unbounded', cursive;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+.home__header,
+.home__footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    padding: 1em;
+    background-color: #333;
+    color: #fff;
+}
+
+.home__header a,
+.home__footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.home__cover {
+    text-align: center;
+    padding: 2em;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.home__cover-title {
+    font-size: 2em;
+    margin-bottom: 1em;
+}
+
+.home__cover-title span {
+    color: #007bff;
+}
+
+@media (min-width: 600px) {
+    .home__gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .home__gallery div {
+        flex: 0 0 calc(50% - 1em); /* Рассчитывает ширину элемента, чтобы быть по 2 на строке */
+    }
+}
+
+.home__gallery img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.home__quote {
+    text-align: center;
+    padding: 2em;
+    background-color: #007bff;
+    color: #fff;
+}
+
+.home__quote span {
+    font-style: italic;
+}
+
+/* Стили для мобильных устройств */
+@media (max-width: 600px) {
+    .home__cover-title {
+        font-size: 1.5em;
+    }
+
+    .home__gallery {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    }
+}
